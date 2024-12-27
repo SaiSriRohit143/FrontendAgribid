@@ -1,0 +1,31 @@
+
+<br><div class="container">
+    <h2 style="color: black; text-shadow: 2px 2px #ff0000;">Sold Crops History</h2>
+    <table class="table table-bordered" style="background-color: white;">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Crop Name</th>
+          <th>Quantity</th>
+          <!-- <th>MSP</th> -->
+          <th>Sold Price</th>
+          <th>Total Price</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let crop of crops">
+          <td>{{ crop.postedDateTime }}</td>
+          <td>{{ crop.cropName }}</td>
+          <td>{{ crop.quantity }}</td>
+          <!-- <td>{{ crop.msp }}</td> -->
+          <td>{{ crop.currentBid }}</td>
+          <td>{{ crop.quantity * crop.currentBid}}</td>
+          <td>{{ crop.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <a routerLink="/fhome"><button type="reset" class="btn btn-secondary ml-2"  style="width: 110px; background-color: red;">Farmer Home</button></a>
+  </div>
+ <br>

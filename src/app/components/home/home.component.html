@@ -1,0 +1,59 @@
+<marquee width="100%" direction="left" height="25px" style="color:white; background-color:rgba(0, 132, 255, 0.295)">
+    Today’s farming system in India is a blend of traditional practices and modern techniques,
+     significantly shaped by climatic conditions, technological innovations, and consumer demand.
+    </marquee>
+ 
+<div class="main-content">
+  <!-- Image Carousel and Latest Updates Wrapper -->
+  <div class="carousel-updates-wrapper">
+    <!-- Image Carousel Section -->
+    <section class="image-carousel">
+      <button class="arrow left-arrow" (click)="moveLeft()">❮</button>
+      <div class="carousel-image-container">
+        <img [src]="images[activeIndex]" alt="Carousel Image" class="carousel-image" />
+      </div>
+      <button class="arrow right-arrow" (click)="moveRight()">❯</button>
+    </section>
+ 
+ 
+ 
+<!-- Portal Description -->
+        <section class="portal-description">
+            <h2>Farm-Scheme</h2> <br>
+            <div class="description-box">
+               
+                <p>Indian farming is evolving with the integration of modern techniques and traditional wisdom, enhancing productivity and sustainability.</p>
+               
+                <p>Bidding platforms empower farmers by providing fair market access, while crop insurance schemes offer crucial
+                financial protection against unpredictable natural calamities, ensuring stability and resilience in the agricultural sector.</p>
+            </div>
+        </section>
+ 
+        <!-- Images with Descriptions -->
+        <section class="image-descriptions">
+            <div class="image-item">
+                <img src="images/bid1.jpg" alt="Bidder" class="description-image" />
+                <p class="image-text">Farmer bidding allows farmers to sell their Crop through a competitive bidding process,
+                    connecting them with buyers from different cities.</p>
+            </div>
+ 
+ 
+            <div class="image-item">
+                <img src="images/insu1.jpg" alt="Insurance" class="description-image" />
+                <p class="image-text">Crop insurance is a risk management strategy
+                     that protects farmers financially better.</p>
+            </div>
+ 
+ 
+            <div class="image-item">
+                <img src="images/marp1.jpg" alt="Market Place" class="description-image" />
+                <p class="image-text">A farmer marketplace connects farmers directly with consumers,
+                 allowing them to sell fresh produce and other goods without intermediaries.
+                </p>
+            </div>
+
+        </section>
+        <a class="nav-link" class="btn btn-danger" routerLink="/mlogin"> Login</a>
+   
+ 
+ 

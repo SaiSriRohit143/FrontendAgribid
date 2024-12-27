@@ -1,0 +1,78 @@
+<br>
+<div class="container">
+    <h2>Bidder Registration Form</h2>
+    <img src="images/image.png" alt="Bidder " style="height: 100px; width: 100px;">
+ 
+    <form id="registrationForm" (ngSubmit)="registerBidder()">
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" [(ngModel)]="details.fullName" name="fullName" required autofocus >
+        </div>
+        <div class="form-group">
+            <label for="contactNo">Contact No.</label>
+            <input type="tel" id="contactNo" name="contactNo" pattern="[0-9]{10}" [(ngModel)]="details.contactNo" required>
+            <small>Format: 1234567890</small>
+        </div>
+        <div class="form-group">
+            <label for="email">E-mail Id</label>
+            <input type="email" id="email" [(ngModel)]="details.email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="address.street">Street</label>
+            <input type="text" id="street" [(ngModel)]="details.address.street" name="details.address.street" required>
+        </div>
+        <div class="form-group">
+            <label for="address.city">City</label>
+            <input type="text" id="city" [(ngModel)]="details.address.city" name="details.address.city" required>
+        </div>
+        <div class="form-group">
+            <label for="address.state">State</label>
+            <input type="text" id="state" [(ngModel)]="details.address.state" name="details.address.state" required>
+        </div>
+        <div class="form-group">
+            <label for="address.pincode">Pin code</label>
+            <input type="text" id="pincode"  name="details.address.pincode" [(ngModel)]="details.address.pincode" pattern="[0-9]{6}" required>
+            <small>Format: 123456</small>
+        </div>
+        <div class="form-group">
+            <label for="accountNo">Account No.</label>
+            <input type="text" id="accountNo" [(ngModel)]="details.accountNo" name="accountNo" required>
+        </div>
+        <div class="form-group">
+            <label for="ifscCode">IFSC Code</label>
+            <input type="text" id="ifscCode" [(ngModel)]="details.ifscCode" name="ifscCode" required>
+        </div>
+        <div class="form-group">
+            <label for="aadhaar">Aadhaar</label>
+            <input type="file" id="aadhaar" (change)="onFileChange($event, 'aadhaar')" name="aadhaar" required>
+        </div>
+        <div class="form-group">
+            <label for="pan">Pan</label>
+            <input type="file" id="pan" (change)="onFileChange($event, 'pan')" name="pan" required>
+        </div>
+        <div class="form-group">
+            <label for="tradeLicense">tradeLicense</label>
+            <input type="file" id="tradeLicense" (change)="onFileChange($event, 'tradeLicense')" name="tradeLicense" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" [(ngModel)]="details.password" name="password" minlength="6" required>
+        </div>
+ 
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" style="width: 100px;">Register</button><br/><br/>
+            <button type="reset" class="btn btn-secondary ml-2" (click)="resetForm()" style="width: 100px; background-color: red;">Reset</button> <br><br>
+            <a routerLink="/bidderlogin"><button type="reset" class="btn btn-secondary ml-2"  style="width: 110px; background-color: red;">Bidder Login</button></a>
+        </div>
+    </form>
+
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+        {{ errorMessage }}
+    </div>
+    <div *ngIf="successMessage" class="alert alert-success mt-3">
+        {{ successMessage }}
+      </div>
+     
+</div>
+ 
+<br>

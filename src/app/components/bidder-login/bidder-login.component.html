@@ -1,0 +1,108 @@
+<!-- <br>
+<div class="form-container">
+    <h2>{{ showForgotPasswordForm ? 'Update Password' : 'Bidder Login' }}</h2>
+    <img src="images/image.png" alt="Bidder " style="height: 100px; width: 100px;">
+    <hr>
+  
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <div *ngIf="!showForgotPasswordForm">
+        <label for="email">Email ID:</label>
+        <input type="text" id="email" formControlName="email" required autofocus/>
+        <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+          UserName is required.
+        </div>
+  
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password" required />
+        <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+          Password is required.
+        </div>
+  
+        <button type="submit">Login</button><br /><br />
+        <button type="button" (click)="toggleForgotPassword()">Forgot Password</button><br><br>
+        <a routerLink="/bregister"><button type="reset" class="btn btn-secondary ml-2"  style="width: 100%; background-color: red;">New User??</button></a>
+
+      </div>
+  
+      <div *ngIf="showForgotPasswordForm">
+        <label for="email">UserName:</label>
+        <input type="text" id="email" formControlName="email" />
+        <div *ngIf="updatePasswordForm.get('email')?.touched && updatePasswordForm.get('email')?.invalid">
+          UserName is required.
+        </div>
+  
+        <label for="newPassword">New Password:</label>
+        <input type="password" id="newPassword" formControlName="newPassword" />
+        <div *ngIf="updatePasswordForm.get('newPassword')?.touched && updatePasswordForm.get('newPassword')?.invalid">
+          New Password is required.
+        </div>
+  
+        <button type="submit">Update Password</button> <br>
+
+        
+      </div>
+    </form>
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+      {{ errorMessage }}
+  </div>
+  <div *ngIf="successMessage" class="alert alert-success mt-3">
+      {{ successMessage }}
+    </div>
+  </div>
+  <br> -->
+  <br>
+  <br>
+  <div class="form-container">
+  <h2>{{ showForgotPasswordForm ? 'Update Password' : 'Bidder Login' }}</h2>
+  <img src="images/image.png" alt="Bidder" style="height: 100px; width: 100px;">
+  <hr>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <div *ngIf="!showForgotPasswordForm">
+      <label for="email">Email ID:</label>
+      <input type="text" id="email" formControlName="email" required autofocus />
+      <div style="color: red;" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+        UserName is required.
+      </div>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" formControlName="password" required />
+      <div style="color: red;" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+        Password is required.
+      </div>
+
+      <button type="submit">Login</button><br /><br />
+      <button type="button" (click)="toggleForgotPassword()">Forgot Password</button><br><br>
+      <a routerLink="/bregister"><button type="reset" class="btn btn-secondary ml-2" style="width: 100%; background-color: red;">New User??</button></a>
+    </div>
+
+    <form [formGroup]="updatePasswordForm" (ngSubmit)="onUpdatePassword()">
+      <div *ngIf="showForgotPasswordForm">
+        <label for="email">Email ID :</label>
+        <input type="text" id="email" formControlName="email" />
+        <div style="color: red;" *ngIf="updatePasswordForm.get('email')?.touched && updatePasswordForm.get('email')?.invalid">
+          UserName is required.
+        </div>
+   
+        <label for="newPassword">New Password:</label>
+        <input type="password" id="newPassword" formControlName="newPassword" />
+        <div style="color: red;" *ngIf="updatePasswordForm.get('newPassword')?.touched && updatePasswordForm.get('newPassword')?.invalid">
+          New Password is required.
+        </div>
+   
+        <button type="submit">Update Password</button> <br><br>
+        <a routerLink="/bidderlogin"><button type="reset" class="btn btn-secondary ml-2" style="width: 100%; background-color: red;">Login</button></a>
+
+      </div>
+
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+      {{ errorMessage }}
+    </div>
+    <div *ngIf="successMessage" class="alert alert-success mt-3">
+      {{ successMessage }}
+    </div>
+  </form>
+  <br>
+  <br>
+  <br>
+<br>

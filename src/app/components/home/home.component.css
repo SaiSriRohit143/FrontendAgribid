@@ -1,0 +1,161 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+ 
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.introduction, .objectives {
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ 
+}
+
+h1, h2 {
+  margin-top: 0;
+  color: white;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+p{
+font-weight:bolder;
+  color: white;
+
+}
+
+.main-content {
+padding: 20px;
+}
+
+/* Image Carousel Section */
+.image-carousel {
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+width: 100%;
+height: 70vh;
+overflow: hidden;
+margin-top: 10px;
+}
+
+.carousel-image-container {
+width: 90%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+}
+
+.carousel-item {
+display: none;
+flex-direction: column;
+align-items: center;
+}
+
+.carousel-item.active {
+display: flex;
+}
+
+.carousel-image {
+max-width: 100%;
+max-height: 100%;
+object-fit: cover;
+border-radius: 10px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+position: relative;
+}
+
+.arrow {
+background-color: rgba(0, 0, 0, 0.5);
+color: white;
+border: none;
+padding: 5px;
+font-size: 2rem;
+cursor: pointer;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+z-index: 10;
+backdrop-filter: blur(5px); /* Add blur effect */
+}
+
+.left-arrow {
+left: 310px; /* Position on the left edge of the image */
+}
+
+.right-arrow {
+right: 310px; /* Position on the right edge of the image */
+}
+
+.arrow:hover {
+background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Images with Descriptions Section */
+.image-descriptions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+  font-weight:bolder;
+  color: white;
+
+
+}
+
+.image-item {
+  text-align: center;
+  max-width: 30%;
+}
+
+.description-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .image-item {
+      flex: 1 1 45%;
+  }
+}
+ 
+@media (max-width: 480px) {
+  .image-item {
+      flex: 1 1 100%;
+  }
+ 
+  .carousel-image-container {
+      max-width: 100%;
+  }
+}
+

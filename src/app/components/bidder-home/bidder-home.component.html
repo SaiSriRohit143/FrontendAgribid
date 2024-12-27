@@ -1,0 +1,78 @@
+<!-- <div class="container">
+  <marquee width="40%" direction="left" height="70px">
+    The bidding time is counted and continued for 6 hours form the latest Bid
+    </marquee>
+    <h2 class="text-center"style="color: black; text-shadow: 2px 2px #ff0000;">Bidding Information</h2>
+    <table class="table table-bordered"  style="background-color: white;">
+      <thead>
+        <tr>
+          <th>Crop Type</th>
+          <th>Crop Name</th>
+          <th>Base Price</th>
+          <th>Current Bid</th>
+          <th>Bid Amount</th>
+          <th>Confirm</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let crop of crops">
+          <td>{{ crop.cropType }}</td>
+          <td>{{ crop.cropName }}</td>
+          <td>{{ crop.basePrice }}</td>
+          <td>{{ crop.currentBid }}</td>
+          <td>
+            <input type="number" [(ngModel)]="crop.newBid" class="form-control" placeholder="Enter your bid" [disabled]="isBiddingExpired(crop.postedDateTime)">
+          </td>
+          <td>
+            <button (click)="crop.newBid !== undefined && updateBid(crop.cid, crop.newBid)" class="btn btn-primary" [disabled]="isBiddingExpired(crop.postedDateTime)">Submit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <a routerLink="/bidderlogin"><button type="reset" class="btn btn-secondary ml-2"  style="width: 110px; background-color: red;">Log-out</button></a> <br>
+    <a routerLink="/bhome"><button type="reset" class="btn btn-secondary ml-2"  style="width: 110px; background-color: red;">Bidder Home</button></a>
+    <br>
+  </div>
+   -->
+   <div class="container">
+    <marquee width="40%" direction="left" height="70px">
+      The bidding time is counted and continued for 6 hours from the latest Bid
+    </marquee>
+    <h2 class="text-center" style="color: black; text-shadow: 2px 2px #ff0000;">Bidding Information</h2>
+    
+    <div *ngIf="crops.length === 1 && crops[0].cropName === 'Service Unavailable'" class="alert alert-warning text-center">
+      {{ crops[0].cropType }}
+    </div>
+    
+    <table *ngIf="!(crops.length === 1 && crops[0].cropName === 'Service Unavailable')" class="table table-bordered" style="background-color: white;">
+      <thead>
+        <tr>
+          <th>Crop Type</th>
+          <th>Crop Name</th>
+          <th>Base Price</th>
+          <th>Current Bid</th>
+          <th>Bid Amount</th>
+          <th>Confirm</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let crop of crops">
+          <td>{{ crop.cropType }}</td>
+          <td>{{ crop.cropName }}</td>
+          <td>{{ crop.basePrice }}</td>
+          <td>{{ crop.currentBid }}</td>
+          <td>
+            <input type="number" [(ngModel)]="crop.newBid" class="form-control" placeholder="Enter your bid" [disabled]="isBiddingExpired(crop.postedDateTime)">
+          </td>
+          <td>
+            <button (click)="crop.newBid !== undefined && updateBid(crop.cid, crop.newBid)" class="btn btn-primary" [disabled]="isBiddingExpired(crop.postedDateTime)">Submit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <a routerLink="/bidderlogin"><button type="reset" class="btn btn-secondary ml-2" style="width: 110px; background-color: red;">Log-out</button></a> <br>
+    <!-- <a routerLink="/bhome"><button type="reset" class="btn btn-secondary ml-2" style="width: 110px; background-color: red;">Bidder Home</button></a> -->
+    <br>
+  </div>
+  

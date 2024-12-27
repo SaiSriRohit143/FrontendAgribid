@@ -1,0 +1,12 @@
+<br><div class="container">
+  <h2 style="color: black; text-shadow: 2px 2px #ff0000;">MarketPlace</h2>
+    <div *ngFor="let crop of crops" class="table table-bordered" style="border-radius: 10px; padding-left: 10px;padding-top: 10px;width: 600px; border-width: 3px; border-color: black;background-color: white;">
+      <p>Crop Type: {{ crop.cropType }}</p>
+      <p>Crop Name: {{ crop.cropName }}</p>
+      <p>Base Price: {{ crop.currentBid }}</p>
+      <p>Current Bid: {{ crop.basePrice }}</p>
+      <p>Posted Date Time: {{ crop.postedDateTime  }}</p>
+    </div>
+    <a routerLink="/fhome"><button type="reset" class="btn btn-secondary ml-2"  style="width: 110px; background-color: red;">Farmer Home</button></a>
+</div>
+<br><br>

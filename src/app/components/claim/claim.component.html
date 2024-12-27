@@ -1,0 +1,80 @@
+<br>
+<br>
+<div class="container">
+  <h2>Get Claim by Policy ID</h2>
+  <img src="https://www.bajajallianz.com/content/dam/bagic/pradhan-mantri-yojna/pm-fasal-yojana-banner.png" alt="alternatetext">
+ 
+  <input type="number" [(ngModel)]="policyId" placeholder="Policy ID">
+  <button (click)="getClaimByPolicyId()">Get Claim</button>
+  <div *ngIf="claim" class="claim-details">
+    <h3>Claim Details</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let key of getKeys(claim)">
+          <tr *ngIf="key !== 'id' && !isObject(claim[key])">
+            <td>{{ key }}</td>
+            <td>{{ claim[key] }}</td>
+          </tr>
+          <ng-container *ngIf="key !== 'id' && isObject(claim[key])">
+            <ng-container *ngFor="let nestedKey of getKeys(claim[key])">
+              <tr *ngIf="nestedKey !== 'id'">
+                <td>{{ nestedKey }}</td>
+                <td>{{ claim[key][nestedKey] }}</td>
+              </tr>
+            </ng-container>
+          </ng-container>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+    {{ errorMessage }}
+</div>
+<div *ngIf="successMessage" class="alert alert-success mt-3">
+    {{ successMessage }}
+</div>
+</div>
+ 
+<br>
+<br>
+ 
+<div class="container">
+  <h2>Apply For Claim</h2>
+  <form [formGroup]="claimForm" (ngSubmit)="onSubmit()">
+    <!-- <div>
+      <label for="policyId">Policy ID:</label>
+      <input type="number" id="policyId" formControlName="policyId">
+    </div> -->
+    <div formGroupName="claimData">
+      <!-- <div>
+        <label for="claimDate">Claim Date:</label>
+        <input type="date" id="claimDate" formControlName="claimDate">
+      </div> -->
+      <div>
+        <label for="causeOfLoss">Cause of Loss:</label>
+        <input type="text" id="causeOfLoss" formControlName="causeOfLoss">
+      </div>
+      <div>
+        <label for="dateOfLoss">Date of Loss:</label>
+        <input type="date" id="dateOfLoss" formControlName="dateOfLoss">
+      </div>
+      <div>
+        <label for="supportingDocuments">Supporting Documents:</label>
+        <input type="file" id="supportingDocuments" (change)="onFileSelected($event)">
+      </div>
+    </div>
+    <button type="submit">Submit Claim</button>
+    <a routerLink="/fhome"><button type="reset" class="btn btn-secondary ml-2" style="width: 130px; margin-left: 270px; background-color: red;">Farmer Home</button></a>
+
+  </form>
+</div>
+<br>
+<br>
+ 
+ 

@@ -1,0 +1,34 @@
+<br><div class="container">
+    <h2 style="color: black; text-shadow: 2px 2px #ff0000;">Farmers List</h2>
+    <table class="table table-bordered" style="background-color: white;">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Full Name</th>
+          <th>Contact No</th>
+          <th>Email ID</th>
+          <th>Account No</th>
+          <th>IFSC Code</th>
+          <th>Land Area</th>
+          <th>Land Address</th>
+          <th>Pincode</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let farmer of farmers">
+          <td>{{ farmer.id }}</td>
+          <td>{{ farmer.fullName }}</td>
+          <td>{{ farmer.contactNo }}</td>
+          <td>{{ farmer.emailId }}</td>
+          <td>{{ farmer.accountNo }}</td>
+          <td>{{ farmer.ifscCode }}</td>
+          <td>{{ farmer.landArea }}</td>
+          <td>{{ farmer.landAddress }}</td>
+          <td>{{ farmer.landPincode }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br>
+
+  <button><a class="nav-link" routerLink="/ahome">Admin home</a></button>

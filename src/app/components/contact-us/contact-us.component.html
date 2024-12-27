@@ -1,0 +1,54 @@
+<div class="about-us">
+    <h1></h1>
+   
+    <p>your trusted platform where farmers can sell their crops, products and manage seasonal insurance.
+      Our mission is to empower farmers by providing a seamless and efficient marketplace.
+   
+    At Agri-Bid, we believe in supporting the agricultural community by offering fair prices, transparent transactions and
+    reliable insurance options tailored to seasonal needs.
+    Join us in revolutionizing the way farmers do business.</p>
+   
+    <div class="image-container">
+      <div class="image-item">
+        <img src="images/f2.jpg" alt="Smart Farming" class="about-us-image">
+        <p class="image-description">"Our team directly contacting the farmers and giving guidelines about Crop Insurance"</p>
+      </div>
+      <div class="image-item">
+        <img src="images/con1.jpg" alt="Farmers working in the field" class="about-us-image">
+        <p class="image-description">"Agriculture is the most healthful, most useful and most noble employment of man."</p>
+      </div>
+    </div>
+   
+    <div class="contact-form-box mt-5">
+      <h2>Contact Us</h2>
+      <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="needs-validation" novalidate>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name:</label>
+          <input type="text" id="name" class="form-control" required [(ngModel)]="contact.name" name="name">
+          <div class="invalid-feedback">
+            Please enter your name.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" id="email" class="form-control" required [(ngModel)]="contact.email" name="email">
+          <div class="invalid-feedback">
+            Please enter a valid email address.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message:</label>
+          <textarea id="message" class="form-control" required [(ngModel)]="contact.message" name="message"></textarea>
+          <div class="invalid-feedback">
+            Please enter your message.
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Submit</button>
+      </form>
+      <div *ngIf="showAlert" class="alert alert-success mt-3" role="alert">
+        Our Team Contact You Soon.. ThankYou!
+      </div>
+    </div>
+  </div>
+   
+   

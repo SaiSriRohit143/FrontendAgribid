@@ -1,0 +1,35 @@
+<br>
+<div class="container">
+    <h2 style="color: black; text-shadow: 2px 2px #ff0000;">Bidders List</h2>
+    <table class="table table-bordered" style="border-width: 10px;background-color: white;" >
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Contact No</th>
+          <th>Email</th>
+          <th>Account No</th>
+          <th>IFSC Code</th>
+          <th>Street</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Pincode</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bidder of bidders">
+          <td>{{ bidder.fullName }}</td>
+          <td>{{ bidder.contactNo }}</td>
+          <td>{{ bidder.email }}</td>
+          <td>{{ bidder.accountNo }}</td>
+          <td>{{ bidder.ifscCode }}</td>
+          <td>{{ bidder.address.street }}</td>
+          <td>{{ bidder.address.city }}</td>
+          <td>{{ bidder.address.state }}</td>
+          <td>{{ bidder.address.pincode }}</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br>
+  <button><a class="nav-link" routerLink="/ahome">Admin home</a></button>

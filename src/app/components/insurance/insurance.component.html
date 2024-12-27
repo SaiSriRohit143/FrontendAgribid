@@ -1,0 +1,70 @@
+<br>
+<br>
+ 
+<div class="container">
+  <h2>Apply For Insurance</h2>
+  <img src="https://www.shutterstock.com/image-vector/agriculture-insurance-sign-icon-hand-600nw-454414312.jpg" alt="alternatetext">
+ 
+  <form [formGroup]="insuranceForm" (ngSubmit)="onApply()">
+    <div class="form-group">
+      <label for="season">Season:</label>
+      <select id="season" formControlName="season" class="form-control">
+        <!-- <option value="">Select Season Type</option> -->
+        <option value="rabi">Rabi</option>
+        <option value="kharif">Kharif</option>
+        <option value="horticulture">Horticulture</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="year">Year:</label>
+      <input id="year" formControlName="year" type="number" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="cropName">Crop Name:</label>
+      <input id="cropName" formControlName="cropName" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="sumInsured">Sum Insured:</label>
+      <input id="sumInsured" formControlName="sumInsured" type="number" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="area">Area:</label>
+      <input id="area" formControlName="area" type="number" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="insuranceCompany">Insurance Company:</label>
+      <select id="insuranceCompany" formControlName="insuranceCompany" class="form-control">
+        <option value="">Select an insurance company</option>
+        <option value="Agriculture Insurance Company of India">Agriculture Insurance Company of India</option>
+        <option value="ICICI Lombard">ICICI Lombard</option>
+        <option value="HDFC ERGO">HDFC ERGO</option>
+        <option value="Bajaj Allianz">Bajaj Allianz</option>
+        <option value="IFFCO Tokio">IFFCO Tokio</option>
+      </select>
+    </div>
+    <button type="button" (click)="calculatePremium()" class="btn btn-primary">Calculate Premium</button>
+    <div class="form-group">
+      <label for="premiumAmount">Premium Amount:</label>
+      <input id="premiumAmount" formControlName="premiumAmount" type="number" class="form-control" readonly>
+    </div>
+    <div class="form-group">
+      <label for="premiumRate">Premium Rate:</label>
+      <input id="premiumRate" formControlName="premiumRate" type="number" class="form-control" readonly>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Apply</button> <br>
+    <a routerLink="/fhome"><button type="reset" class="btn btn-secondary ml-2" style="width: 130px; background-color: red;">Farmer Home</button></a>
+
+  </form>
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+    {{ errorMessage }}
+</div>
+<div *ngIf="successMessage" class="alert alert-success mt-3">
+    {{ successMessage }}
+</div>
+</div>
+ 
+<br>
+<br>
+ 
+ 

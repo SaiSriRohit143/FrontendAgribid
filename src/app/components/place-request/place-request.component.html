@@ -1,0 +1,43 @@
+<br><div class="container" >
+    <h2>Place a Request</h2>
+    <form id="sellCropForm" (submit)="sellCrop($event)">
+        <div class="form-group">
+            <label for="cropType">Crop Type:</label>
+            <input type="text" id="cropType" name="cropType" required autofocus>
+        </div>
+        <div class="form-group">
+            <label for="cropName">Crop Name:</label>
+            <input type="text" id="cropName" name="cropName" required>
+        </div>
+        <div class="form-group">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required>
+        </div>
+        <div class="form-group">
+            <label for="basePrice">Base Price:</label>
+            <input type="number" id="basePrice" name="basePrice" required> 
+        </div>
+        <div class="form-group">
+            <label for="currentBid">Current Bid:</label>
+            <input type="number" id="currentBid" name="currentBid" required readonly>
+        </div>
+        <div class="form-group">
+            <label for="soilPHCertificate">Soil PH Certificate:</label>
+            <input type="file" id="soilPHCertificate" name="soilPHCertificate" required>
+        </div>
+        <div class="form-group">
+        <button type="submit" class="btn btn-primary" style="width: 100px;">Submit</button> <br/><br/>
+        <button type="reset" class="btn btn-secondary ml-2"  style="width: 100px; background-color: red;"(click)="hideSellForm()">Cancel</button> <br> <br>
+        <a routerLink="/fhome"><button type="reset" class="btn btn-secondary ml-2" style="width: 110px; background-color: red;">Farmer Home</button></a>
+
+
+        <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+            {{ errorMessage }}
+        </div>
+        <div *ngIf="successMessage" class="alert alert-success mt-3">
+            {{ successMessage }}
+          </div>
+</div>
+<br>
+<br>
+<br>

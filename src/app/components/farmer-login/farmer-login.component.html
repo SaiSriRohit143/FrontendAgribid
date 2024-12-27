@@ -1,0 +1,52 @@
+<br>
+<br>
+
+<div class="form-container">
+  <h2>{{ showForgotPasswordForm ? 'Update Password' : 'Farmer Login' }}</h2>
+
+  <img src="https://pmfby.amnex.co.in/pmfby/public/img/pmfby-mascot-linkflip.svg" alt="alternatetext">
+  <hr>
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()" *ngIf="!showForgotPasswordForm">
+    <label for="emailId">Email ID:</label>
+    <input type="text" id="emailId" formControlName="emailId" required autofocus/>
+    <div *ngIf="loginForm.get('emailId')?.touched && loginForm.get('emailId')?.invalid">
+      UserName is required.
+    </div>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" formControlName="password" required />
+    <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+      Password is required.
+    </div>
+
+    <button type="submit">Login</button><br />
+    <button type="button" (click)="toggleForgotPassword()">Forgot Password</button> <br>
+    <a routerLink="/fregister"><button type="reset" class="btn btn-secondary ml-2" style="width: 100%; background-color: red;">New User??</button></a>
+  </form>
+
+  <form [formGroup]="updatePasswordForm" (ngSubmit)="onUpdatePassword()" *ngIf="showForgotPasswordForm">
+    <label for="emailId">Email ID :</label>
+    <input type="text" id="emailId" formControlName="emailId" />
+    <div *ngIf="updatePasswordForm.get('emailId')?.touched && updatePasswordForm.get('emailId')?.invalid">
+      UserName is required.
+    </div>
+
+    <label for="newPassword">New Password:</label>
+    <input type="password" id="newPassword" formControlName="newPassword" />
+    <div *ngIf="updatePasswordForm.get('newPassword')?.touched && updatePasswordForm.get('newPassword')?.invalid">
+      New Password is required.
+    </div>
+
+    <button type="submit">Update Password</button>
+    <a routerLink="/farmerlogin"><button class="btn btn-secondary ml-2" style="width: 100%; background-color: red;">Login</button></a>
+  </form>
+
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+    {{ errorMessage }}
+  </div>
+  <div *ngIf="successMessage" class="alert alert-success mt-3">
+    {{ successMessage }}
+  </div>
+</div>
+<br>
+<br>

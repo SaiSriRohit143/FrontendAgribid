@@ -1,0 +1,23 @@
+.nav-item {
+  margin: 10px 0;
+  padding-right: 500px;
+}
+.nav-link {
+  display: block;
+  width: 150px;
+  height: 43px;
+  text-align: center;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.nav-link:hover {
+  background-color: rgb(232, 95, 95);
+}
+button {
+  border: none;
+  background: none;
+  padding: 0;
+}

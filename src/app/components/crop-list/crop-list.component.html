@@ -1,0 +1,42 @@
+<br><div class="container">
+  <h2 style="color: black; text-shadow: 2px 2px #ff0000;">Crop List</h2>
+  <table class="table table-bordered" style="background-color: white;">
+    <thead>
+      <tr>
+        <th>Bidder ID</th>
+        <th>Crop ID</th>
+        <th>Crop Type</th>
+        <th>Base Price</th>
+        <th>Crop Name</th>
+        <th>Quantity</th>
+        <th>Current Bid</th>
+        <th>Posted Date & Time</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let crop of crops">
+        <td>{{ crop.bid }}</td>
+        <td>{{ crop.cid }}</td>
+        <td>{{ crop.cropType }}</td>
+        <td>{{ crop.basePrice }}</td>
+        <td>{{ crop.cropName }}</td>
+        <td>{{ crop.quantity }}</td>
+        <td>{{ crop.currentBid }}</td>
+        <td>{{ crop.postedDateTime }}</td>
+        
+        <td>
+          <button class="btn btn-success" (click)="onApprove(crop.cid)">Approve</button>
+          <button class="btn btn-danger" (click)="onReject(crop.cid)">Reject</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+    {{ errorMessage }}
+  </div>
+  <div *ngIf="successMessage" class="alert alert-success mt-3">
+    {{ successMessage }}
+  </div>
+</div>
+<button><a class="nav-link" routerLink="/ahome">Admin home</a></button>
